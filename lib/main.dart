@@ -16,13 +16,6 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blueGrey[800], //Changing this will change the color of the TabBar
         accentColor: Colors.cyan[600], // displays when scroll limit
       ),
-   /*   theme: ThemeData(
-        fontFamily: 'SF Pro Display',
-        backgroundColor: Colors.orange[50],
-        brightness: Brightness.light,
-        primaryColor: Colors.cyan[800], //Changing this will change the color of the TabBar
-        accentColor: Colors.orangeAccent[700], // displays when scroll limit
-      ),*/
       home: SplashScreen(),
     );
   }

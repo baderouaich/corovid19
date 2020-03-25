@@ -1,5 +1,5 @@
 name: corovid19
-description: Worldwide realtime covid-19 stats
+description: Frequently updated worldwide covid-19 stats
 version: 1.0.0+1
 
 environment:
@@ -8,6 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: ^0.5.6+3
   carousel_slider: ^1.4.1
   page_transition: ^1.1.5
   time_ago_provider: ^1.0.3

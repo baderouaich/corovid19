@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../backend/api/api.dart';
+import '../../backend/storage/storage.dart';
 
 class CountryDetailsView extends StatefulWidget
 {
@@ -13,12 +14,47 @@ class CountryDetailsView extends StatefulWidget
 
 class _CountryDetailsViewState extends State<CountryDetailsView>
 {
+  Api api;
+  Storage storage;
 
+  @override
+  void initState() {
+    storage = new Storage();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-    appBar: AppBar(title: Text(widget.countryName), centerTitle: true),
+    appBar: AppBar(title: Text(widget.countryName), centerTitle: true,
+    actions: <Widget>
+    [
+      FutureBuilder<bool>
+        (
+          future: storage.isFavorite(widget.countryName),
+          builder: (c, s)
+          {
+            if(s.hasData && !s.hasError)
+            {
+              bool isFavorite = s.data;
+              return IconButton(
+                  icon: Icon(isFavorite ? Icons.star : Icons.star_border),
+                  color: Colors.amber,
+                  onPressed: ()
+                  {
+                    //add country name to favorites
+                    setState(() {
+                      if(isFavorite)
+                        storage.removeFavorite(widget.countryName);
+                      else
+                        storage.addFavorite(widget.countryName);
+                    });
+                  });
+            }
+            else
+              return CircularProgressIndicator();
+          })
+    ],),
       body: FutureBuilder<Map<String, dynamic>>(
         future: Api.getCountry(widget.countryName),
         builder: (ctx, snapshot)
@@ -41,7 +77,6 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
               else
                 {
                   var country = response["data"] ?? {};
-                  print("Got: " + country);
                   List<Widget> items =
                       [
                         ///Render Flag at first
@@ -97,11 +132,16 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
                 }
 
             }
-          else return Center(child: Column(
-            children: <Widget>[
-              Text("Loading Data..."),
-              LinearProgressIndicator(),
-            ],
+          else return Center(child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Loading Data..."),
+                Divider(),
+                LinearProgressIndicator(),
+              ],
+            ),
           ));
         },
       ),

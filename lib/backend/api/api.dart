@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
-import '../models/country.dart';
 
 class Api
 {
@@ -71,9 +70,9 @@ class Api
 
 
   /// Returns data of a specific country. If an exact name match is desired pass ?strict=true in the query string
-  static Future<Map<String, dynamic>> getCountry(final String countryName) async
+  static Future<Map<String, dynamic>> getCountry(String countryName) async
   {
-    final String url = "$baseUrl/countries/$countryName";
+     String url = "$baseUrl/countries/$countryName";
     try
     {
       var response = await http.get(url);

@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
             PageTransition(
                 type: PageTransitionType.fade,
                 child: HomeScreen(),
-                duration: Duration(seconds: 2))));
+                duration: Duration(seconds: 1))));
   }
 
   @override
@@ -30,8 +30,8 @@ class _SplashScreenState extends State<SplashScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Image.asset("assets/logo.png", width: 90, height: 90),
+            padding: const EdgeInsets.all(25.0),
+            child: Image.asset("assets/logo.png"),
           ),
           Text("Corovid-19",
               style: TextStyle(

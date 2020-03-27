@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../backend/storage/storage.dart';
+import '../../backend/models/country.dart';
 import '../activities/country_details_view.dart';
 import 'package:page_transition/page_transition.dart';
 
 /// We need state management for updating favorite icon star,
 /// and so calling setState() will update only the state of this widget, not the whole main Scaffold view
 class CountryViewItem extends StatefulWidget {
-  final country; // data country
+  final Country country; // data country
   CountryViewItem(this.country);
   @override
   _CountryViewItemState createState() => _CountryViewItemState();
@@ -22,26 +23,26 @@ class _CountryViewItemState extends State<CountryViewItem> {
   Widget build(BuildContext context) {
     return Card(elevation: 2.0,
       child: ListTile(
-        onTap: () {
+        onTap: ()
+        {
           Navigator.push(
               context,
               PageTransition(
                   type: PageTransitionType.fade,
-                  child: CountryDetailsView(
-                      countryName: widget.country["country"]),
-                  duration: Duration(seconds: 2)));
+                  child: CountryDetailsView(country: widget.country),
+                  duration: Duration(seconds: 1)));
         },
-        title: Text(widget.country["country"], style: TextStyle(fontSize: 18.0,
+        title: Text(widget.country.name, style: TextStyle(fontSize: 18.0,
             fontWeight: FontWeight.w500),),
         leading: Image.network(
-            widget.country["countryInfo"]["flag"], width: 30, height: 30),
+            widget.country.countryInfo.flag, width: 30, height: 30),
         subtitle: Text(
-          "${widget.country["cases"]}", style: TextStyle(fontSize: 20.0,
+          "${widget.country.cases}", style: TextStyle(fontSize: 20.0,
             fontWeight: FontWeight.w800),),
 
         trailing: FutureBuilder<bool>
           (
-            future: storage.isFavorite(widget.country["country"]),
+            future: storage.isFavorite(widget.country.name),
             builder: (c, s) {
               if (s.hasData && !s.hasError) {
                 bool isFavorite = s.data;
@@ -52,9 +53,9 @@ class _CountryViewItemState extends State<CountryViewItem> {
                       //add country name to favorites
                       setState(() {
                         if (isFavorite)
-                          storage.removeFavorite(widget.country["country"]);
+                          storage.removeFavorite(widget.country.name);
                         else
-                          storage.addFavorite(widget.country["country"]);
+                          storage.addFavorite(widget.country.name);
                       });
                     });
               }

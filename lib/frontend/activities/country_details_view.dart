@@ -1,37 +1,86 @@
-
 import 'package:flutter/material.dart';
 
-import '../../backend/api/api.dart';
 import '../../backend/storage/storage.dart';
+import '../../backend/models/country.dart';
 
 class CountryDetailsView extends StatefulWidget
 {
-  final String countryName;
-  CountryDetailsView({this.countryName});
+  final Country country;
+  CountryDetailsView({this.country});
   @override
   _CountryDetailsViewState createState() => _CountryDetailsViewState();
 }
 
 class _CountryDetailsViewState extends State<CountryDetailsView>
 {
-  Api api;
   Storage storage;
-
   @override
   void initState() {
     storage = new Storage();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context)
   {
+    List<Widget> items =
+    [
+      ///Render Flag at first
+      Image.network(widget.country.countryInfo.flag, fit: BoxFit.cover, width: MediaQuery.of(context).size.width),
+
+      /// Data
+      ListTile(
+        title: Text("Total Cases"),
+        trailing: Text("${widget.country.cases}"),
+      ),
+      ListTile(
+        title: Text("Today Cases"),
+        trailing: Text("${widget.country.todayCases}"),
+      ),
+      Divider(),
+
+
+      ListTile(
+        title: Text("Total Deaths"),
+        trailing: Text("${widget.country.deaths}"),
+      ),
+      ListTile(
+        title: Text("Today Deaths"),
+        trailing: Text("${widget.country.todayDeaths}"),
+      ),
+      ListTile(
+        title: Text("Total Recovered"),
+        trailing: Text("${widget.country.recovered}"),
+      ),
+
+      Divider(),
+      ListTile(
+        title: Text("Active"),
+        trailing: Text("${widget.country.active}"),
+      ),
+      ListTile(
+        title: Text("Critical"),
+        trailing: Text("${widget.country.critical}"),
+      ),
+      ListTile(
+        title: Text("Cases Per One Million"),
+        trailing: Text("${widget.country.casesPerOneMillion}"),
+      ),
+      ListTile(
+        title: Text("Deaths Per One Million"),
+        trailing: Text("${widget.country.deathsPerOneMillion}"),
+      ),
+
+
+    ];
+
     return Scaffold(
-    appBar: AppBar(title: Text(widget.countryName), centerTitle: true,
+    appBar: AppBar(title: Text(widget.country.name), centerTitle: true,
     actions: <Widget>
     [
       FutureBuilder<bool>
         (
-          future: storage.isFavorite(widget.countryName),
+          future: storage.isFavorite(widget.country.name),
           builder: (c, s)
           {
             if(s.hasData && !s.hasError)
@@ -45,9 +94,9 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
                     //add country name to favorites
                     setState(() {
                       if(isFavorite)
-                        storage.removeFavorite(widget.countryName);
+                        storage.removeFavorite(widget.country.name);
                       else
-                        storage.addFavorite(widget.countryName);
+                        storage.addFavorite(widget.country.name);
                     });
                   });
             }
@@ -55,96 +104,7 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
               return CircularProgressIndicator();
           })
     ],),
-      body: FutureBuilder<Map<String, dynamic>>(
-        future: Api.getCountry(widget.countryName),
-        builder: (ctx, snapshot)
-        {
-          if(!snapshot.hasError && snapshot.hasData)
-            {
-              var response = snapshot.data;
-              if (response["isError"])
-              {
-                return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        title: Text(response["message"],
-                            style: TextStyle(color: Colors.white)),
-                        leading: Icon(Icons.cloud_off),
-                      ),
-                    ));
-              }
-              else
-                {
-                  var country = response["data"] ?? {};
-                  List<Widget> items =
-                      [
-                        ///Render Flag at first
-                        Image.network(country["countryInfo"]["flag"], fit: BoxFit.cover, width: MediaQuery.of(context).size.width),
-
-                        /// Data
-                        ListTile(
-                          title: Text("Total Cases"),
-                          trailing: Text("${country["cases"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Today Cases"),
-                          trailing: Text("${country["todayCases"]}"),
-                        ),
-                        Divider(),
-
-
-                        ListTile(
-                          title: Text("Total Deaths"),
-                          trailing: Text("${country["deaths"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Today Deaths"),
-                          trailing: Text("${country["todayDeaths"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Total Recovered"),
-                          trailing: Text("${country["recovered"]}"),
-                        ),
-
-                        Divider(),
-                        ListTile(
-                          title: Text("Active"),
-                          trailing: Text("${country["active"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Critical"),
-                          trailing: Text("${country["critical"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Cases Per One Million"),
-                          trailing: Text("${country["casesPerOneMillion"]}"),
-                        ),
-                        ListTile(
-                          title: Text("Deaths Per One Million"),
-                          trailing: Text("${country["deathsPerOneMillion"]}"),
-                        ),
-
-
-                      ];
-
-                  return SingleChildScrollView(physics: BouncingScrollPhysics(), child: Column(children: items));
-                }
-
-            }
-          else return Center(child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text("Loading Data..."),
-                Divider(),
-                LinearProgressIndicator(),
-              ],
-            ),
-          ));
-        },
-      ),
+      body: SingleChildScrollView(physics: BouncingScrollPhysics(), child: Column(children: items))
     );
   }
 }

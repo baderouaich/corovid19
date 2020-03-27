@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import '../../backend/models/all_details.dart';
 import 'package:flutter/material.dart';
 
 class CasesCarouselSlider extends StatefulWidget {
-  final Map<String, dynamic> data;
-  CasesCarouselSlider(this.data);
+  final AllDetails allDetails;
+  CasesCarouselSlider(this.allDetails);
   @override
   _CasesCarouselSliderState createState() => _CasesCarouselSliderState();
 }
@@ -48,7 +49,7 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "${widget.data["cases"]}",
+                            "${widget.allDetails.cases}",
                             style: TextStyle(
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
@@ -97,7 +98,7 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "${widget.data["recovered"]}",
+                            "${widget.allDetails.recovered}",
                             style: TextStyle(
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
@@ -146,7 +147,7 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "${widget.data["deaths"]}",
+                            "${widget.allDetails.deaths}",
                             style: TextStyle(
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),

@@ -3,12 +3,7 @@
 Frequently updated worldwide covid-19 stats 
 
 ## ScreenShots
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/0.png"> 
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/1.png"> 
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/2.png">
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/3.png"> 
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/4.png"> 
-<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/5.png">
+<img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/0.png"> <img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/1.png"> <img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/2.png"><img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/3.png"> <img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/4.png"> <img height="480px" src="https://raw.githubusercontent.com/BaderEddineOuaich/corovid19/master/ScreenShots/5.png">
 
 
 ## How to run

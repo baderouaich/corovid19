@@ -37,8 +37,8 @@ class _CountryViewItemState extends State<CountryViewItem> {
         leading: Image.network(
             widget.country.countryInfo.flag, width: 30, height: 30),
         subtitle: Text(
-          "${widget.country.cases}", style: TextStyle(fontSize: 20.0,
-            fontWeight: FontWeight.w800),),
+          "${widget.country.cases}", style: TextStyle(fontSize: 25.0,
+            fontWeight: FontWeight.w300),),
 
         trailing: FutureBuilder<bool>
           (

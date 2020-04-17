@@ -1,6 +1,6 @@
 name: corovid19
 description: Frequently updated worldwide covid-19 stats
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ">=2.2.2 <3.0.0"

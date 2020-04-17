@@ -51,11 +51,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.cases}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Cases",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -101,11 +101,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.todayCases}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Today Cases",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -152,11 +152,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.recovered}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Recovered",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -203,11 +203,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.active}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Active",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -254,11 +254,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.deaths}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Deaths",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -304,11 +304,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.todayDeaths}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Today Deaths",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -354,11 +354,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.critical}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Critical",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -406,11 +406,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.tests}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Total Tests",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],
@@ -459,11 +459,11 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                         children: <Widget>[
                           Text(
                             "${widget.allDetails.affectedCountries}",
-                            style: TextStyle(
+                            style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 40.0, fontWeight: FontWeight.w800),
                           ),
                           Text("Affected Countries",
-                              style: TextStyle(
+                              style: TextStyle(color: const Color(0xffffffff),
                                 fontSize: 20.0,
                               ))
                         ],

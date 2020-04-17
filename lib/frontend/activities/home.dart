@@ -115,6 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+
   Widget _renderAppBar() {
     return isSearching
         ? AppBar(

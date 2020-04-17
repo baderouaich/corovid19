@@ -14,7 +14,8 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
   Widget build(BuildContext context) {
     /// 3 {Total cases, total recovered, total deaths}
     var radius = BorderRadius.circular(15.0);
-    List<Widget> items = [
+    List<Widget> items = 
+    [
       /// Total Cases
       Card(
         shape: RoundedRectangleBorder(borderRadius: radius),
@@ -63,6 +64,58 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                   ],
                 ))),
       ),
+
+
+      /// Today Cases
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/cases.jpeg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[600].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.todayCases}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Today Cases",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+
+
 
       /// Total Recovered
       Card(
@@ -113,6 +166,59 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                 ))),
       ),
 
+
+
+      /// Active
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/active.jpg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[600].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.active}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Active",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+
+
+
       /// Total Deaths
       Card(
         shape: RoundedRectangleBorder(borderRadius: radius),
@@ -161,6 +267,214 @@ class _CasesCarouselSliderState extends State<CasesCarouselSlider> {
                   ],
                 ))),
       ),
+    
+    
+      /// Today Deaths
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/deaths.jpg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[700].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.todayDeaths}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Today Deaths",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+    
+
+      /// Critical
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/critical.jpg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[700].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.critical}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Critical",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+    
+
+
+
+      /// Total Tests
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/tests.jpg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[700].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.tests}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Total Tests",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+    
+
+
+
+    
+      /// Affected countries
+      Card(
+        shape: RoundedRectangleBorder(borderRadius: radius),
+        elevation: 7.0,
+        margin: const EdgeInsets.all(12.0),
+        child: Container(
+            width: MediaQuery.of(context).size.width -
+                (MediaQuery.of(context).size.width * 0.20),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: ClipRRect(
+                borderRadius: radius,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: BoxConstraints.expand(),
+                        child: ClipRRect(
+                            borderRadius: radius,
+                            child: Image.asset("assets/countries.jpg",
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints.expand(),
+                      color: Colors.blueGrey[700].withOpacity(0.50),
+                      child: Container(),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${widget.allDetails.affectedCountries}",
+                            style: TextStyle(
+                                fontSize: 40.0, fontWeight: FontWeight.w800),
+                          ),
+                          Text("Affected Countries",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))),
+      ),
+    
+
+
     ];
     return CarouselSlider(
       items: items,

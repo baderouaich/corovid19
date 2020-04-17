@@ -28,7 +28,7 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
       ///Render Flag at first
       Image.network(widget.country.countryInfo.flag, fit: BoxFit.cover, width: MediaQuery.of(context).size.width),
 
-      /// Data
+     /// Data
       ListTile(
         title: Text("Total Cases"),
         trailing: Text("${widget.country.cases}"),
@@ -36,6 +36,10 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
       ListTile(
         title: Text("Today Cases"),
         trailing: Text("${widget.country.todayCases}"),
+      ),
+      ListTile(
+        title: Text("Cases Per One Million"),
+        trailing: Text("${widget.country.casesPerOneMillion}"),
       ),
       Divider(),
 
@@ -49,29 +53,35 @@ class _CountryDetailsViewState extends State<CountryDetailsView>
         trailing: Text("${widget.country.todayDeaths}"),
       ),
       ListTile(
-        title: Text("Total Recovered"),
-        trailing: Text("${widget.country.recovered}"),
-      ),
-
-      Divider(),
-      ListTile(
-        title: Text("Active"),
-        trailing: Text("${widget.country.active}"),
-      ),
-      ListTile(
-        title: Text("Critical"),
-        trailing: Text("${widget.country.critical}"),
-      ),
-      ListTile(
-        title: Text("Cases Per One Million"),
-        trailing: Text("${widget.country.casesPerOneMillion}"),
-      ),
-      ListTile(
         title: Text("Deaths Per One Million"),
         trailing: Text("${widget.country.deathsPerOneMillion}"),
       ),
 
 
+      Divider(),
+    ListTile(
+        title: Text("Total Recovered"),
+        trailing: Text("${widget.country.recovered}"),
+      ),   
+      ListTile(
+        title: Text("Active"),
+        trailing: Text("${widget.country.active}"),
+      ),
+    ListTile(
+        title: Text("Critical"),
+        trailing: Text("${widget.country.critical}"),
+      ),
+      Divider(),
+     ListTile(
+        title: Text("Total Tests"),
+        trailing: Text("${widget.country.tests}"),
+      ),
+       ListTile(
+        title: Text("Tests Per One Million"),
+        trailing: Text("${widget.country.testsPerOneMillion}"),
+      ),
+ 
+   
     ];
 
     return Scaffold(

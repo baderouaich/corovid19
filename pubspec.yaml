@@ -29,6 +29,10 @@ flutter:
     - assets/cases.jpeg
     - assets/recovered.jpg
     - assets/deaths.jpg
+    - assets/active.jpg
+    - assets/critical.jpg
+    - assets/tests.jpg
+    - assets/countries.jpg
 
 
   fonts:

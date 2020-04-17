@@ -11,6 +11,8 @@ class SortBy
     "active",
     "critical",
     "casesPerOneMillion",
-    "deathsPerOneMillion"
+    "deathsPerOneMillion",
+    "tests",
+    "testsPerOneMillion"
   ];
 }

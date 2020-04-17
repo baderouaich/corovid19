@@ -8,7 +8,7 @@ import '../storage/storage.dart';
 
 class Api
 {
-  static const String baseUrl = "https://corona.lmao.ninja";
+  static const String baseUrl = "https://corona.lmao.ninja/v2";
   static Map<String, dynamic> defaultResponse =
   {
     "isError": false,
@@ -67,7 +67,7 @@ class Api
         if(sortBy == SortBy.parameters[0]) // favorites
           {
             //sort by favs
-            for(int i = 0; i < countries.length - 1; i++)
+            for(int i = 0; i < countries.length; i++)
               {
                 for(int j = i + 1; j < countries.length; j++)
                   {

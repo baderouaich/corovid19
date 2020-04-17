@@ -6,10 +6,10 @@ class Country
   var name;
   CountryInfo countryInfo;
   var cases, todayCases, deaths, todayDeaths, recovered, active,
-      critical, casesPerOneMillion, deathsPerOneMillion;
+      critical, casesPerOneMillion, deathsPerOneMillion, testsPerOneMillion, tests;
   Country({this.name, this.countryInfo, this.cases, this.todayCases,
     this.deaths, this.todayDeaths, this.recovered,
-    this.active, this.critical, this.casesPerOneMillion, this.deathsPerOneMillion});
+    this.active, this.critical, this.casesPerOneMillion, this.deathsPerOneMillion, this.tests, this.testsPerOneMillion});
 
   factory Country.fromJson(dynamic json)
   {
@@ -25,6 +25,8 @@ class Country
         critical: json['critical'],
         casesPerOneMillion: json['casesPerOneMillion'],
         deathsPerOneMillion: json['deathsPerOneMillion'],
+        tests: json['tests'],
+        testsPerOneMillion: json['testsPerOneMillion']
     );
   }
 }

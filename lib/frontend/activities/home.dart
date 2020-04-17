@@ -176,6 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (BuildContext c) =>
                 <PopupMenuEntry<String>>
                 [
+                  PopupMenuItem(child: Text("Sort By"), enabled: false, textStyle: TextStyle(fontWeight: FontWeight.w800)),
                   for(final String param in SortBy.parameters)
                     PopupMenuItem<String>(child: Text(param), value: param),
                 ],

@@ -1,5 +1,6 @@
+import '../theme/theme_model.dart';
+import 'package:provider/provider.dart';
 import '../../backend/models/country.dart';
-
 import '../../backend/storage/storage.dart';
 import 'package:flutter/material.dart';
 import "../../backend/api/api.dart";
@@ -202,7 +203,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   loadApiData();
                 },
               ),
+
+              ///Change Theme
+              IconButton(
+                icon: Icon(Icons.invert_colors),
+                onPressed: () 
+                {
+                      Provider.of<ThemeModel>(context).toggleTheme();
+                      storage.setIsDark(ThemeModel.isCurrentThemeDark());
+                },
+              ),
+
             ],
+
             title: Text("Corovid-19"),
           );
   }

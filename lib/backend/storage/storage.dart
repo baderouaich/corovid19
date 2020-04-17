@@ -46,4 +46,15 @@ class Storage
   }
 
 
+  //theme
+  void setIsDark(bool v) async
+  {
+     final SharedPreferences prefs = await _prefs;
+     prefs.setBool("isDark", v);
+  }
+  Future<bool> isDark() async
+  {
+     final SharedPreferences prefs = await _prefs;
+     return prefs.getBool("isDark") ?? false == true;
+  }
 }
